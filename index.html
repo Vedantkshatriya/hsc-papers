@@ -30,15 +30,40 @@ body {
 
 h1 {
   font-size: 1.4rem;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .note {
   font-size: 0.9rem;
   color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
   margin-bottom: 16px;
 }
 
+.tab-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+}
+
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -57,53 +82,47 @@ th, td {
 th {
   background-color: #151820;
   color: var(--muted);
-  font-weight: 600;
-}
-
-tr:hover {
-  background-color: #20242e;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* MOBILE VIEW */
+/* Tab content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Mobile */
 @media (max-width: 700px) {
   table, thead, tbody, th, td, tr {
     display: block;
   }
-
-  thead {
-    display: none;
-  }
-
+  thead { display: none; }
   tr {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 8px;
-    background-color: var(--card);
   }
-
   td {
     border: none;
     padding: 6px 4px;
-    font-size: 0.9rem;
   }
-
   td::before {
     content: attr(data-label);
     display: block;
     font-size: 0.75rem;
     color: var(--muted);
-    margin-bottom: 2px;
   }
 }
 </style>
@@ -112,146 +131,129 @@ a:hover {
 <body>
 <div class="container">
 
-<h1>Maharashtra Board Class 12 – Final Papers (English)</h1>
-<div class="note">
-Offline table • Click “Open” to access papers • Dark-mode & mobile-ready
+<h1>Maharashtra Board Class 12 – Question Papers</h1>
+<div class="note">English medium • Dark mode • Mobile-friendly • Click “Open” to access papers</div>
+
+<!-- TAB BUTTONS -->
+<div class="tabs">
+  <button class="tab-btn active" id="Physics-btn" onclick="showTab('Physics')">Physics</button>
+  <button class="tab-btn" id="Chemistry-btn" onclick="showTab('Chemistry')">Chemistry</button>
+  <button class="tab-btn" id="Maths-btn" onclick="showTab('Maths')">Maths</button>
+  <button class="tab-btn" id="English-btn" onclick="showTab('English')">English</button>
+  <button class="tab-btn" id="Geography-btn" onclick="showTab('Geography')">Geography</button>
+  <button class="tab-btn" id="Sanskrit-btn" onclick="showTab('Sanskrit')">Sanskrit</button>
+  <button class="tab-btn" id="Biology-btn" onclick="showTab('Biology')">Biology</button>
+  <button class="tab-btn" id="IT-btn" onclick="showTab('IT')">IT</button>
+  <button class="tab-btn" id="Hindi-btn" onclick="showTab('Hindi')">Hindi</button>
+  <button class="tab-btn" id="Marathi-btn" onclick="showTab('Marathi')">Marathi</button>
 </div>
 
+<!-- PHYSICS -->
+<div id="Physics" class="tab-content active">
 <table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Year</th>
-<th>Session</th>
-<th>Link</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td data-label="Subject">Physics</td>
-<td data-label="Year">2025</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-287-2025.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Physics</td>
-<td data-label="Year">2024</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-837-2024.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Physics</td>
-<td data-label="Year">2023</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-237-2023.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Physics</td>
-<td data-label="Year">2022</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-737-2022.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Chemistry</td>
-<td data-label="Year">2025</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-302-2025.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Chemistry</td>
-<td data-label="Year">2024</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-852-2024.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Chemistry</td>
-<td data-label="Year">2023</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-252-2023.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Chemistry</td>
-<td data-label="Year">2022</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-752-2022.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">English</td>
-<td data-label="Year">2025</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-251-2025.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">English</td>
-<td data-label="Year">2024</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-801-2024.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">English</td>
-<td data-label="Year">2023</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-201-2023.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">English</td>
-<td data-label="Year">2022</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-701-2022.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Geography</td>
-<td data-label="Year">2025</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-geography-39-j-420-2025.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Geography</td>
-<td data-label="Year">2024</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-geography-39-j-970-2024.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Geography</td>
-<td data-label="Year">2023</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-geography-39-j-369-2023.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Sanskrit</td>
-<td data-label="Year">2024</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-sanskrit-33-j-823-2024.html" target="_blank">Open</a></td>
-</tr>
-
-<tr>
-<td data-label="Subject">Sanskrit</td>
-<td data-label="Year">2022</td>
-<td data-label="Session">Feb/March</td>
-<td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-sanskrit-33-j-523-2022.html" target="_blank">Open</a></td>
-</tr>
-
-</tbody>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td data-label="Year">2025</td><td data-label="Session">Feb/March</td><td data-label="Link"><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-287-2025.html" target="_blank">Open</a></td></tr>
+<tr><td>2024</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-837-2024.html" target="_blank">Open</a></td></tr>
+<tr><td>2023</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-237-2023.html" target="_blank">Open</a></td></tr>
+<tr><td>2022</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-physics-54-j-737-2022.html" target="_blank">Open</a></td></tr>
 </table>
+</div>
+
+<!-- CHEMISTRY -->
+<div id="Chemistry" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>2025</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-302-2025.html" target="_blank">Open</a></td></tr>
+<tr><td>2024</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-852-2024.html" target="_blank">Open</a></td></tr>
+<tr><td>2023</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-252-2023.html" target="_blank">Open</a></td></tr>
+<tr><td>2022</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-chemistry-55-j-752-2022.html" target="_blank">Open</a></td></tr>
+</table>
+</div>
+
+<!-- MATHS -->
+<div id="Maths" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>2025</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-mathematics-and-statistics-40-j-312-2025.html" target="_blank">Open</a></td></tr>
+<tr><td>2024</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-mathematics-and-statistics-40-j-862-2024.html" target="_blank">Open</a></td></tr>
+<tr><td>2023</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-mathematics-and-statistics-40-j-262-2023.html" target="_blank">Open</a></td></tr>
+<tr><td>2022</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-mathematics-and-statistics-40-j-762-2022.html" target="_blank">Open</a></td></tr>
+</table>
+</div>
+
+<!-- ENGLISH -->
+<div id="English" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>2025</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-251-2025.html" target="_blank">Open</a></td></tr>
+<tr><td>2024</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-801-2024.html" target="_blank">Open</a></td></tr>
+<tr><td>2023</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-201-2023.html" target="_blank">Open</a></td></tr>
+<tr><td>2022</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-english-01-j-701-2022.html" target="_blank">Open</a></td></tr>
+</table>
+</div>
+
+<!-- GEOGRAPHY -->
+<div id="Geography" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>2025</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-geography-39-j-420-2025.html" target="_blank">Open</a></td></tr>
+<tr><td>2024</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-geography-39-j-970-2024.html" target="_blank">Open</a></td></tr>
+<tr><td>2023</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-geography-39-j-369-2023.html" target="_blank">Open</a></td></tr>
+</table>
+</div>
+
+<!-- SANSKRIT -->
+<div id="Sanskrit" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>2024</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-sanskrit-33-j-823-2024.html" target="_blank">Open</a></td></tr>
+<tr><td>2022</td><td>Feb/March</td><td><a href="https://www.maharashtrastudy.com/papers/mh-board-class-12-sanskrit-33-j-523-2022.html" target="_blank">Open</a></td></tr>
+</table>
+</div>
+
+<!-- BIOLOGY -->
+<div id="Biology" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>—</td><td>—</td><td>To be added</td></tr>
+</table>
+</div>
+
+<!-- IT -->
+<div id="IT" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>—</td><td>—</td><td>To be added</td></tr>
+</table>
+</div>
+
+<!-- HINDI -->
+<div id="Hindi" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>—</td><td>—</td><td>To be added</td></tr>
+</table>
+</div>
+
+<!-- MARATHI -->
+<div id="Marathi" class="tab-content">
+<table>
+<tr><th>Year</th><th>Session</th><th>Link</th></tr>
+<tr><td>—</td><td>—</td><td>To be added</td></tr>
+</table>
+</div>
 
 </div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById(id + '-btn').classList.add('active');
+}
+</script>
+
 </body>
 </html>
 
